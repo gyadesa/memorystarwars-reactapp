@@ -1,0 +1,58 @@
+body{
+  background-image: url(./images/Wiki-background.jpg);
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #f8f5de;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+p, span, .h1 {
+  font-family: 'Sunflower', sans-serif;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.authors {
+  width: 280px;
+  height: 230px;
+  padding: 20px;
+  margin: -13px;
+}
+
+.jumbotron{
+  background-image: url(./images/star-wars-wallpaper-6.jpg);
+  background-size: cover;
+	background-repeat:no-repeat;
+}
+
+.jumbo-row {
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.scores {
+  background-color: blue;
+}
+
+h5 {
+  align-content: center;
+  background-color: orange;
+}
