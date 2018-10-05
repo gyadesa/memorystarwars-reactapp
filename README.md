@@ -1,3 +1,8 @@
+# React Full Stack
+### Overview
+
+This assignment is a memory game with React. The assignment is require to break up the application's UI into components, manage component state, and respond to users events.
+------------------------------------------------------------------------------------------------------------------------------------
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
