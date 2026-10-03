@@ -2,7 +2,7 @@
   "name": "starwars-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://https://gyadesa.github.io/memory-game/",
+  "homepage": "https://gyadesa.github.io/memorystarwars-reactapp/",
   "dependencies": {
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
