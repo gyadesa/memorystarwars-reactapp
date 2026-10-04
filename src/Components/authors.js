@@ -89,19 +89,26 @@ export default class Authors extends Component {
     })
     // if author is in the clickedArray, then run if
     if (checkAuthor) {
-      this.setState({ clickStreak: 0, clickedArray: [] });
-      // store total points from clickStreak and put them into an array. Then grab the largest number in the array and display it.
-      this.state.topScoreArray.push(this.state.clickStreak);
-      this.state.topScore = Math.max(...this.state.topScoreArray);
-    } else {
+  const topScore = Math.max(this.state.topScore, this.state.clickStreak);
+
+  this.setState({
+    clickStreak: 0,
+    clickedArray: [],
+    topScore: topScore
+  });
+} else {
       // if image was not clicked before, add image to clickedArray
       let currentAuthor = this.state.authors.find(function (element) {
         return element.id === id;
       })
 
-      this.state.clickedArray.push(currentAuthor);
-      clickStreak++;
-      this.setState({ clickStreak });
+      const clickedArray = [...this.state.clickedArray, currentAuthor];
+clickStreak++;
+
+this.setState({
+  clickedArray: clickedArray,
+  clickStreak: clickStreak
+});
     }
   }
 
