@@ -1,66 +1,77 @@
 import React, { Component } from 'react';
+import HanSolo from '../images/HanSolo.png';
+import PrincessLeia from '../images/PrincessLeia.png';
+import DarkVeder from '../images/DarkVeder.png';
+import LukeSkywalker from '../images/LukeSkywalker.png';
+import ObiWanKenobi from '../images/Obi-WanKenobi.png';
+import R2D2 from '../images/R2-D2.png';
+import Yoda from '../images/Yoda.png';
+import Rey from '../images/Rey.png';
+import TheEmperor from '../images/TheEmperor.png';
+import Finn from '../images/Finn.png';
+import ChooChubaka from '../images/ChooChubaka.png';
+import MaceWindu from '../images/MaceWindu.png';
 
 // authors rendered to page
 const authors = [
   {
     id: 1,
-    // url: require("/images/HanSolo.png",
-    url: require("../images/HanSolo.png"),
+    url: HanSolo,
     alt: "Han Solo"
   },
   {
     id: 2,
-    url: require("../images/PrincessLeia.png"),
+    url: PrincessLeia,
     alt: "Princess Leia"
   },
   {
     id: 3,
-    url: require("../images/DarkVeder.png"),
+    url: DarkVeder,
     alt: "ark Veder"
   },
   {
     id: 4,
-    url: require("../images/LukeSkywalker.png"),
+    url: LukeSkywalker,
     alt: "Stevenson"
   },
   {
     id: 5,
-    url: require("../images/Obi-WanKenobi.png"),
+    url: ObiWanKenobi,
     alt: "Obi-Wan Kenobi"
   },
   {
     id: 6,
-    url: require("../images/R2-D2.png"),
+    url: R2D2,
     alt: "R2-D2"
   },
   {
     id: 7,
-    url: require("../images/Yoda.png"),
+    url: Yoda,
     alt: "Yonda"
   },
   {
     id: 8,
-    url: require("../images/Rey.png"),
+    url: Rey,
     alt: "Rey"
   },
   {
     id: 9,
-    url: require("../images/TheEmperor.png"),
+    url: TheEmperor,
     alt: "The Emperor"
   },
   {
     id: 10,
-    url: require("../images/Finn.png"),
+    url: Finn,
     alt: "Finn"
   },
   {
     id: 11,
-    url: require("../images/ChooChubaka.png"),
+    url: ChooChubaka,
     alt: "Choo Chubaka"
   },
   {
     id: 12,
-    url: require("../images/MaceWindu.png"),
+    url: MaceWindu,
     alt: "Mace Windu"
   }
 ];

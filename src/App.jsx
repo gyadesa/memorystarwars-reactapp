@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Authors from './Components/authors.js';
+import Authors from "./Components/authors.jsx";
 
 export default class App extends Component {
 
