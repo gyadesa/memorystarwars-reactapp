@@ -118,7 +118,6 @@ this.setState({
       authors,
       clickStreak: 0,
       topScore: 0,
-      topScoreArray: [],
       clickedArray: []
     }
   }
