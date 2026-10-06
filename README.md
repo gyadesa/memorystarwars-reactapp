@@ -25,13 +25,14 @@ The game implements the following core behavior:
 - React
 - JavaScript
 - HTML/CSS
-- Create React App
-- Jest
+- Vite
+- Vitest
+- jsdom
 - React DOM Test Utilities
+- Node.js / npm
 - Git
 - GitHub
 - GitHub Actions
-- Node.js / npm
 
 ## Automated Testing
 
@@ -54,13 +55,11 @@ Run the tests locally with:
 ```bash
 npm test
 ```
-
-For a non-interactive test run similar to the CI environment:
+The test script uses Vitest in non-interactive run mode:
 
 ```bash
-npm test -- --watchAll=false
+npm test
 ```
-
 ## Continuous Integration
 
 GitHub Actions CI has been added to automatically execute the project's automated tests.
@@ -73,9 +72,12 @@ The CI workflow currently runs when:
 The workflow:
 
 1. Checks out the repository.
-2. Configures Node.js.
+2. Configures Node.js 24.
 3. Installs project dependencies.
-4. Executes the automated test suite in CI mode.
+4. Executes the Vitest automated test suite with `npm test`.
+
+The CI environment is aligned with the modern Vite/Vitest toolchain and provides automated regression
+feedback whenever changes are pushed to the modernization branch.
 
 This provides automated regression feedback whenever changes are pushed to the modernization branch.
 
@@ -97,6 +99,17 @@ The original application was created as a Full Stack Web Development coursework 
 - Added duplicate-selection and Top Score regression coverage.
 - Added GitHub Actions continuous integration.
 - Verified the automated test suite successfully executes in GitHub Actions.
+- Migrated the development and production build tooling from Create React App to Vite.
+- Converted JSX source files to `.jsx` and replaced legacy CommonJS image loading with ES module imports.
+- Verified application rendering and core game behavior after the Vite migration.
+- Verified the Vite production build successfully completes.
+- Migrated the automated test suite from the legacy CRA/Jest toolchain to Vitest with jsdom.
+- Preserved all 4 existing regression tests during the test-runner migration.
+- Removed the obsolete `react-scripts` dependency and its legacy dependency tree.
+- Reduced the local npm dependency audit from more than 200 reported findings to 0 reported vulnerabilities.
+- Updated GitHub Actions to run the Vitest suite on Node.js 24.
+- Diagnosed and corrected CI compatibility issues introduced during the toolchain migration.
+- Verified the modernized test suite successfully executes in GitHub Actions.
 
 ## Quality Engineering Approach
 
@@ -119,17 +132,21 @@ Start the development server:
 ```bash
 npm start
 ```
-
-The application runs locally at:
+By default, Vite serves the application locally at:
 
 ```text
-http://localhost:3000
+http://localhost:5173
 ```
 
 Run the automated tests:
 
 ```bash
 npm test
+```
+Create a production build:
+
+```bash
+npm run build
 ```
 
 ## Current Modernization Branch
@@ -146,31 +163,39 @@ This keeps modernization work separate from the original project history until c
 
 Future modernization work may include:
 
-- Expand automated behavioral and edge-case coverage.
-- Add test coverage reporting.
-- Remove obsolete application state and legacy code.
-- Review and modernize outdated dependencies in controlled increments.
-- Address dependency security findings without introducing regressions.
-- Improve accessibility and testability.
-- Modernize deployment.
-- Continue improving CI quality gates.
+- Expand automated behavioral and edge-case test coverage.
+- Add automated test coverage reporting.
+- Upgrade React in a controlled, separately tested change.
+- Improve accessibility and accessibility-focused testing.
+- Strengthen CI quality gates with reproducible dependency installation and production build validation.
+- Modernize GitHub Pages deployment for the Vite build.
+- Continue removing obsolete application code where identified.
+- Review future dependency updates incrementally and verify them through automated regression testing.
 
-## Legacy Dependency Notice
+## Dependency Modernization
 
-This application was originally built using an older React/Create React App dependency stack.
+The application was originally built with an older React and Create React App dependency stack.
 
-Dependency modernization is being handled separately from functional refactoring and test development so that upgrades can be tested and verified incrementally rather than introducing large, difficult-to-diagnose changes.
+As part of the 2026 modernization effort, Create React App and `react-scripts` were removed and the project was migrated to Vite and Vitest. This substantially reduced the legacy dependency tree and resulted in 0 vulnerabilities reported by the local npm audit on the modernization branch.
+
+React remains on the original application version and will be upgraded separately so that framework changes can be tested independently from the completed build-tool and test-runner migration.
+
+The repository's default branch may continue to show legacy dependency alerts until the modernization work is reviewed and integrated.
 
 ## Portfolio Context
 
 This repository demonstrates both the original web-development project and a later software-quality modernization effort.
 
-The modernization work emphasizes:
+The modernization work demonstrates:
 
-- Software testing
-- Behavioral and regression test design
-- Defect prevention through automated verification
+- Software testing and behavioral regression test design
+- Refactoring while preserving existing application behavior
 - React state-management improvements
-- Git-based change control
-- Continuous integration
+- Migration of legacy build and test tooling
+- Automated verification with Vitest and jsdom
+- Dependency and security-risk reduction
+- Git-based incremental change control
+- Continuous integration with GitHub Actions
+- CI failure investigation and environment compatibility troubleshooting
+- Production-build verification with Vite
 - Incremental modernization of legacy software
