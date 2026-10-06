@@ -1,7 +1,13 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-  esbuild: {
-    jsx: 'transform'
+  oxc: {
+  jsx: {
+    runtime: 'classic'
+  }
+},
+  test: {
+    environment: 'jsdom',
+    globals: true
   }
 });
